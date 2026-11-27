@@ -6,6 +6,8 @@ The seven synthetic examples run offline. Two follow a publication and a shipmen
 
 [Download the verified release ZIP](https://github.com/sarobinson2011/hold-v0-examples/releases/download/v0-examples-1/HOLD-v0-Examples-Edition-1-Final.zip) · [Browse the Python source](examples/src/) · [View the v0-examples-1 release](https://github.com/sarobinson2011/hold-v0-examples/releases/tag/v0-examples-1)
 
+**Project status.** Examples Edition 1 is complete. Further development is parked. A reproducible failure in this edition or a concrete new use case can prompt a follow-up.
+
 ## Clone and run
 
 Start in a writable directory with Git and Python 3 available. The replay uses Python’s standard SQLite module and local files. Only the clone needs network access.
