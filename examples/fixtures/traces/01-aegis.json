@@ -1,0 +1,355 @@
+{
+  "name": "01-aegis",
+  "gates": [
+    "aegis"
+  ],
+  "purpose": "Timely receipt, private staging, two refusals, corrected approval, one publication.",
+  "steps": [
+    {
+      "gate": "aegis",
+      "tick": 10,
+      "principal": "Iona Vale",
+      "command": {
+        "op": "deliver",
+        "org": "AEGIS-TRACE",
+        "action": "release-DS-7",
+        "challenge": {
+          "challenger": "Iona Vale",
+          "id": "C-A",
+          "claim": {
+            "type": "steward clearance",
+            "issuer": "Clearance desk",
+            "id": "SC-7",
+            "version": "v1",
+            "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e"
+          },
+          "ground": "DATASET_SCOPE_MISMATCH"
+        },
+        "ref": "r-48d1",
+        "sent_tick": 1
+      },
+      "expect": {
+        "result": "ADMITTED",
+        "reason": "TIMELY",
+        "due": 15,
+        "reviewer": "Ellis Chen"
+      },
+      "as": "first"
+    },
+    {
+      "gate": "aegis",
+      "tick": 10,
+      "principal": "Rowan Ellis",
+      "command": {
+        "op": "commit",
+        "action": "release-DS-7",
+        "key": "post-1",
+        "target": "Publish DS-7 to public catalogue",
+        "approval_id": "release-DS-7/approval-1"
+      },
+      "expect": {
+        "result": "BLOCKED_HOLD",
+        "reason": "OPEN_CHALLENGES"
+      },
+      "as": "blocked",
+      "state": [
+        {
+          "gate": "aegis",
+          "action": "release-DS-7",
+          "status": "HELD",
+          "open": 1,
+          "effects": 0,
+          "deadlines": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "gate": "aegis",
+      "tick": 11,
+      "principal": "Rowan Ellis",
+      "command": {
+        "op": "prepare",
+        "action": "release-DS-7"
+      },
+      "expect": {
+        "result": "PREPARED",
+        "reason": "REVERSIBLE_ONLY"
+      },
+      "state": [
+        {
+          "gate": "aegis",
+          "action": "release-DS-7",
+          "status": "HELD",
+          "open": 1,
+          "effects": 0
+        }
+      ]
+    },
+    {
+      "gate": "aegis",
+      "tick": 12,
+      "principal": "Register clerk",
+      "command": {
+        "op": "update_basis",
+        "action": "release-DS-7",
+        "basis": {
+          "claim": {
+            "type": "steward clearance",
+            "issuer": "Clearance desk",
+            "id": "SC-7",
+            "version": "v2",
+            "digest": "6cc2bcf6accf67af174146a4b8df1f446daf916b57a144b034a187f605fe18c9"
+          },
+          "evidence": "clearance-file/2"
+        }
+      },
+      "expect": {
+        "result": "UPDATED",
+        "reason": "CURRENT_BASIS"
+      }
+    },
+    {
+      "gate": "aegis",
+      "tick": 12,
+      "principal": "Register clerk",
+      "command": {
+        "op": "mandate",
+        "subject": "Rowan Ellis",
+        "revision": 2,
+        "active": true
+      },
+      "expect": {
+        "result": "UPDATED",
+        "reason": "CURRENT_MANDATE"
+      },
+      "state": [
+        {
+          "gate": "aegis",
+          "action": "release-DS-7",
+          "status": "HELD",
+          "open": 1,
+          "effects": 0
+        }
+      ]
+    },
+    {
+      "gate": "aegis",
+      "tick": 13,
+      "principal": "Rowan Ellis",
+      "command": {
+        "op": "resume",
+        "action": "release-DS-7",
+        "owner_mandate": 2,
+        "reason": "Owner approves this target following the recorded review.",
+        "findings": [],
+        "approval": {
+          "id": "release-DS-7/approval-2",
+          "target": "Publish DS-7 to public catalogue",
+          "claim": {
+            "type": "steward clearance",
+            "issuer": "Clearance desk",
+            "id": "SC-7",
+            "version": "v1",
+            "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e"
+          },
+          "evidence": "clearance-file/1",
+          "owner_mandate": 2,
+          "reviewer_mandates": {
+            "Ellis Chen": 1
+          }
+        }
+      },
+      "expect": {
+        "result": "REFUSED",
+        "reason": "STALE_EVIDENCE"
+      },
+      "state": [
+        {
+          "gate": "aegis",
+          "action": "release-DS-7",
+          "status": "HELD",
+          "open": 1,
+          "effects": 0
+        }
+      ]
+    },
+    {
+      "gate": "aegis",
+      "tick": 13,
+      "principal": "Rowan Ellis",
+      "command": {
+        "op": "resume",
+        "action": "release-DS-7",
+        "owner_mandate": 1,
+        "reason": "Owner approves this target following the recorded review.",
+        "findings": [],
+        "approval": {
+          "id": "release-DS-7/approval-2",
+          "target": "Publish DS-7 to public catalogue",
+          "claim": {
+            "type": "steward clearance",
+            "issuer": "Clearance desk",
+            "id": "SC-7",
+            "version": "v2",
+            "digest": "6cc2bcf6accf67af174146a4b8df1f446daf916b57a144b034a187f605fe18c9"
+          },
+          "evidence": "clearance-file/2",
+          "owner_mandate": 1,
+          "reviewer_mandates": {
+            "Ellis Chen": 1
+          }
+        }
+      },
+      "expect": {
+        "result": "REFUSED",
+        "reason": "STALE_AUTHORITY"
+      },
+      "state": [
+        {
+          "gate": "aegis",
+          "action": "release-DS-7",
+          "status": "HELD",
+          "open": 1,
+          "effects": 0
+        }
+      ]
+    },
+    {
+      "gate": "aegis",
+      "tick": 14,
+      "principal": "Ellis Chen",
+      "command": {
+        "op": "finding",
+        "action": "release-DS-7",
+        "case": {
+          "$seq": "first"
+        },
+        "basis": {
+          "claim": {
+            "type": "steward clearance",
+            "issuer": "Clearance desk",
+            "id": "SC-7",
+            "version": "v2",
+            "digest": "6cc2bcf6accf67af174146a4b8df1f446daf916b57a144b034a187f605fe18c9"
+          },
+          "evidence": "clearance-file/2"
+        },
+        "mandate": 1,
+        "ref": "f-3a9d"
+      },
+      "expect": {
+        "result": "FINDING"
+      },
+      "as": "finding"
+    },
+    {
+      "gate": "aegis",
+      "tick": 14,
+      "principal": "Rowan Ellis",
+      "command": {
+        "op": "resume",
+        "action": "release-DS-7",
+        "owner_mandate": 2,
+        "reason": "Owner approves this target following the recorded review.",
+        "findings": [
+          {
+            "$seq": "finding"
+          }
+        ],
+        "approval": {
+          "id": "release-DS-7/approval-2",
+          "target": "Publish DS-7 to public catalogue",
+          "claim": {
+            "type": "steward clearance",
+            "issuer": "Clearance desk",
+            "id": "SC-7",
+            "version": "v2",
+            "digest": "6cc2bcf6accf67af174146a4b8df1f446daf916b57a144b034a187f605fe18c9"
+          },
+          "evidence": "clearance-file/2",
+          "owner_mandate": 2,
+          "reviewer_mandates": {
+            "Ellis Chen": 1
+          }
+        }
+      },
+      "expect": {
+        "result": "RESUMED",
+        "reason": "FRESH_APPROVAL",
+        "proposed_approval": {
+          "id": "release-DS-7/approval-2",
+          "target": "Publish DS-7 to public catalogue",
+          "claim": {
+            "type": "steward clearance",
+            "issuer": "Clearance desk",
+            "id": "SC-7",
+            "version": "v2",
+            "digest": "6cc2bcf6accf67af174146a4b8df1f446daf916b57a144b034a187f605fe18c9"
+          },
+          "evidence": "clearance-file/2",
+          "owner_mandate": 2,
+          "reviewer_mandates": {
+            "Ellis Chen": 1
+          }
+        }
+      },
+      "as": "decision",
+      "state": [
+        {
+          "gate": "aegis",
+          "action": "release-DS-7",
+          "status": "APPROVED",
+          "open": 0,
+          "effects": 0
+        }
+      ]
+    },
+    {
+      "gate": "aegis",
+      "tick": 14,
+      "principal": "Rowan Ellis",
+      "command": {
+        "op": "commit",
+        "action": "release-DS-7",
+        "key": "post-after-review",
+        "target": "Publish DS-7 to public catalogue",
+        "approval_id": "release-DS-7/approval-2"
+      },
+      "expect": {
+        "result": "COMMITTED",
+        "approval": {
+          "$seq": "decision"
+        }
+      },
+      "as": "posted"
+    },
+    {
+      "gate": "aegis",
+      "tick": 14,
+      "principal": "Rowan Ellis",
+      "command": {
+        "op": "commit",
+        "action": "release-DS-7",
+        "key": "post-after-review",
+        "target": "Publish DS-7 to public catalogue",
+        "approval_id": "release-DS-7/approval-2"
+      },
+      "expect": {
+        "result": "COMMITTED"
+      },
+      "same": "posted",
+      "no_new": true,
+      "state": [
+        {
+          "gate": "aegis",
+          "action": "release-DS-7",
+          "status": "COMMITTED",
+          "open": 0,
+          "effects": 1
+        }
+      ]
+    }
+  ]
+}

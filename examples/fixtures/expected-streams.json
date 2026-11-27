@@ -1,0 +1,14 @@
+{
+  "founding": {
+    "files": 5,
+    "sha256": "769384f474431cdf37f2e988851d044b9966ec427b14075d888e7e21e762f43f"
+  },
+  "catalogue": {
+    "files": 22,
+    "sha256": "ac183c234b3eae11c79c332d7912e02d14d893d8b684f10c6a91a6c6ff1bad8d"
+  },
+  "revocation": {
+    "files": 29,
+    "sha256": "09ce8397291299045ed9ea6686f9f4815c912c8d6e0c3691674fa4d03be65a04"
+  }
+}

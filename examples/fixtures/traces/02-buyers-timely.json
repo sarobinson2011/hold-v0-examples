@@ -1,0 +1,271 @@
+{
+  "name": "02-buyers-timely",
+  "gates": [
+    "north",
+    "south"
+  ],
+  "purpose": "One immutable challenge, separate receipts and costs, independent decisions and unrelated progress.",
+  "steps": [
+    {
+      "gate": "north",
+      "tick": 20,
+      "principal": "Sam Ortiz",
+      "command": {
+        "op": "deliver",
+        "org": "North buyer",
+        "action": "accept-B42",
+        "challenge": {
+          "challenger": "Sam Ortiz",
+          "id": "C-B",
+          "claim": {
+            "type": "lab report",
+            "issuer": "Synthetic assay lab",
+            "id": "LR-17",
+            "version": "v1",
+            "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+          },
+          "ground": "BATCH_MISMATCH"
+        },
+        "ref": "r-a2b8",
+        "sent_tick": 1
+      },
+      "expect": {
+        "result": "ADMITTED",
+        "reason": "TIMELY",
+        "due": 25,
+        "reviewer": "Alex Reed"
+      },
+      "as": "first"
+    },
+    {
+      "gate": "south",
+      "tick": 20,
+      "principal": "Sam Ortiz",
+      "command": {
+        "op": "deliver",
+        "org": "South buyer",
+        "action": "accept-B42",
+        "challenge": {
+          "challenger": "Sam Ortiz",
+          "id": "C-B",
+          "claim": {
+            "type": "lab report",
+            "issuer": "Synthetic assay lab",
+            "id": "LR-17",
+            "version": "v1",
+            "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+          },
+          "ground": "BATCH_MISMATCH"
+        },
+        "ref": "r-e541",
+        "sent_tick": 1
+      },
+      "expect": {
+        "result": "ADMITTED",
+        "reason": "TIMELY",
+        "due": 25,
+        "reviewer": "Bea Singh"
+      },
+      "as": "first"
+    },
+    {
+      "gate": "north",
+      "tick": 21,
+      "principal": "Nia Ford",
+      "command": {
+        "op": "commit",
+        "action": "order-O99",
+        "key": "post-1",
+        "target": "Post acceptance of order O99",
+        "approval_id": "order-O99/approval-1"
+      },
+      "expect": {
+        "result": "COMMITTED"
+      },
+      "state": [
+        {
+          "gate": "north",
+          "action": "order-O99",
+          "status": "COMMITTED",
+          "open": 0,
+          "effects": 1
+        }
+      ]
+    },
+    {
+      "gate": "south",
+      "tick": 21,
+      "principal": "Sam Ortiz",
+      "command": {
+        "op": "deliver",
+        "org": "South buyer",
+        "action": "accept-B42",
+        "challenge": {
+          "challenger": "Sam Ortiz",
+          "id": "C-B",
+          "claim": {
+            "type": "lab report",
+            "issuer": "Synthetic assay lab",
+            "id": "LR-17",
+            "version": "v1",
+            "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+          },
+          "ground": "BATCH_MISMATCH"
+        },
+        "ref": "r-e541",
+        "sent_tick": 1
+      },
+      "expect": {
+        "result": "ADMITTED"
+      },
+      "same": "first",
+      "no_new": true,
+      "state": [
+        {
+          "gate": "north",
+          "action": "accept-B42",
+          "status": "HELD",
+          "open": 1,
+          "effects": 0
+        },
+        {
+          "gate": "south",
+          "action": "accept-B42",
+          "status": "HELD",
+          "open": 1,
+          "effects": 0,
+          "deadlines": [
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "gate": "north",
+      "tick": 22,
+      "principal": "Alex Reed",
+      "command": {
+        "op": "finding",
+        "action": "accept-B42",
+        "case": {
+          "$seq": "first"
+        },
+        "basis": {
+          "claim": {
+            "type": "lab report",
+            "issuer": "Synthetic assay lab",
+            "id": "LR-17",
+            "version": "v1",
+            "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+          },
+          "evidence": "intake-file/1"
+        },
+        "mandate": 1,
+        "ref": "f-36b0"
+      },
+      "expect": {
+        "result": "FINDING"
+      },
+      "as": "finding"
+    },
+    {
+      "gate": "north",
+      "tick": 22,
+      "principal": "Nia Ford",
+      "command": {
+        "op": "cancel",
+        "action": "accept-B42",
+        "owner_mandate": 1,
+        "reason": "Reviewer substantiated the scope mismatch.",
+        "findings": [
+          {
+            "$seq": "finding"
+          }
+        ]
+      },
+      "expect": {
+        "result": "CANCELLED",
+        "reason": "OWNER_CANCELLED"
+      },
+      "as": "cancelled",
+      "state": [
+        {
+          "gate": "north",
+          "action": "accept-B42",
+          "status": "CANCELLED",
+          "open": 0,
+          "effects": 0
+        }
+      ]
+    },
+    {
+      "gate": "south",
+      "tick": 23,
+      "principal": "Sam Ortiz",
+      "command": {
+        "op": "petition",
+        "case": {
+          "$seq": "first"
+        },
+        "action": "accept-B42"
+      },
+      "expect": {
+        "result": "PETITION_RECEIVED",
+        "due": 25,
+        "escalation_reviewer": "Theo Price"
+      }
+    },
+    {
+      "gate": "south",
+      "tick": 25,
+      "principal": "Gate clock",
+      "command": {
+        "op": "advance"
+      },
+      "expect": {
+        "result": "ADVANCED",
+        "reason": "LOCAL_CLOCK"
+      },
+      "ordered": [
+        "OVERDUE",
+        "ADVANCED"
+      ]
+    },
+    {
+      "gate": "south",
+      "tick": 25,
+      "principal": "Dev Malik",
+      "command": {
+        "op": "commit",
+        "action": "accept-B42",
+        "key": "post-1",
+        "target": "Post acceptance of batch B42",
+        "approval_id": "accept-B42/approval-1"
+      },
+      "expect": {
+        "result": "BLOCKED_HOLD",
+        "reason": "OPEN_CHALLENGES"
+      },
+      "state": [
+        {
+          "gate": "south",
+          "action": "accept-B42",
+          "status": "HELD",
+          "open": 1,
+          "effects": 0,
+          "overdue": 1,
+          "deadlines": [
+            25
+          ]
+        },
+        {
+          "gate": "north",
+          "action": "order-O99",
+          "status": "COMMITTED",
+          "open": 0,
+          "effects": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "claims": {
+    "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261": "Synthetic lab report LR-17 v1 certifies batch B41."
+  },
+  "intake": {
+    "r-e541": "Packing note B42 differs from lab specimen B41."
+  },
+  "findings": {
+    "f-e997": "B41 was tested. South's reviewer substantiates the mismatch."
+  }
+}

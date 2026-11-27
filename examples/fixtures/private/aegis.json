@@ -1,0 +1,18 @@
+{
+  "claims": {
+    "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e": "Synthetic steward clearance SC-7 v1 covers DS-6.",
+    "6cc2bcf6accf67af174146a4b8df1f446daf916b57a144b034a187f605fe18c9": "Synthetic steward clearance SC-7 v2 covers DS-7."
+  },
+  "intake": {
+    "r-48d1": "Staged DS-7 differs from the DS-6 clearance.",
+    "r-052c": "A second field also names DS-6.",
+    "r-01b9": "Steward requests review of the corrected DS-7 entry."
+  },
+  "findings": {
+    "f-3a9d": "Correction covers DS-7. Release can resume.",
+    "f-92f7": "The v1 clearance covers DS-6. Mismatch substantiated.",
+    "f-92f8": "Second review confirms the v1 scope mismatch.",
+    "f-78cf": "Replacement confirms the scope mismatch on v1.",
+    "f-a010": "Second field rechecked on corrected clearance."
+  }
+}

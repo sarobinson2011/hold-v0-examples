@@ -1,0 +1,31 @@
+{
+  "action": "release-DS-7",
+  "approval": {
+    "claim": {
+      "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e",
+      "id": "SC-7",
+      "issuer": "Clearance desk",
+      "type": "steward clearance",
+      "version": "v1"
+    },
+    "evidence": "clearance-file/1",
+    "id": "release-DS-7/approval-1",
+    "owner_mandate": 1,
+    "reviewer_mandates": {
+      "Ellis Chen": 1
+    },
+    "target": "Publish DS-7 to public catalogue"
+  },
+  "approval_seq": 1,
+  "command_key": "post-1",
+  "gate": "aegis",
+  "org": "AEGIS-TRACE",
+  "owner": "Rowan Ellis",
+  "payload": {
+    "dataset": "DS-7",
+    "title": "DS-7 synthetic catalogue listing"
+  },
+  "payload_digest": "e5a6c28bae18fdbc696310b5054e319288cc18f83311d154f47abb408c445904",
+  "publication_id": "aegis/DS-7/publication-1",
+  "target": "Publish DS-7 to public catalogue"
+}

@@ -1,0 +1,64 @@
+{
+  "name": "05-aegis-commit-first",
+  "gates": [
+    "aegis"
+  ],
+  "purpose": "Reverse the equal-tick order at the catalogue gate.",
+  "steps": [
+    {
+      "gate": "aegis",
+      "tick": 10,
+      "principal": "Rowan Ellis",
+      "command": {
+        "op": "commit",
+        "action": "release-DS-7",
+        "key": "post-1",
+        "target": "Publish DS-7 to public catalogue",
+        "approval_id": "release-DS-7/approval-1"
+      },
+      "expect": {
+        "result": "COMMITTED"
+      },
+      "as": "posted"
+    },
+    {
+      "gate": "aegis",
+      "tick": 10,
+      "principal": "Iona Vale",
+      "command": {
+        "op": "deliver",
+        "org": "AEGIS-TRACE",
+        "action": "release-DS-7",
+        "challenge": {
+          "challenger": "Iona Vale",
+          "id": "C-A",
+          "claim": {
+            "type": "steward clearance",
+            "issuer": "Clearance desk",
+            "id": "SC-7",
+            "version": "v1",
+            "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e"
+          },
+          "ground": "DATASET_SCOPE_MISMATCH"
+        },
+        "ref": "r-48d1",
+        "sent_tick": 1
+      },
+      "expect": {
+        "result": "LATE",
+        "commitment": {
+          "$seq": "posted"
+        }
+      },
+      "state": [
+        {
+          "gate": "aegis",
+          "action": "release-DS-7",
+          "status": "COMMITTED",
+          "open": 0,
+          "effects": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "publication_id": "aegis/DS-7/publication-1",
+  "dataset": "DS-7",
+  "listing": {
+    "dataset": "DS-7",
+    "title": "DS-7 synthetic catalogue listing"
+  },
+  "owner": "Rowan Ellis",
+  "commit_command": {
+    "op": "commit",
+    "action": "release-DS-7",
+    "key": "post-1",
+    "target": "Publish DS-7 to public catalogue",
+    "approval_id": "release-DS-7/approval-1"
+  },
+  "challenger": "Iona Vale",
+  "delivery": {
+    "op": "deliver",
+    "org": "AEGIS-TRACE",
+    "action": "release-DS-7",
+    "challenge": {
+      "challenger": "Iona Vale",
+      "id": "C-A",
+      "claim": {
+        "type": "steward clearance",
+        "issuer": "Clearance desk",
+        "id": "SC-7",
+        "version": "v1",
+        "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e"
+      },
+      "ground": "DATASET_SCOPE_MISMATCH"
+    },
+    "ref": "r-48d1",
+    "sent_tick": 1
+  },
+  "conflicting_listing": {
+    "dataset": "DS-7",
+    "title": "Changed listing under the same approval"
+  }
+}

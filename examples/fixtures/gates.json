@@ -1,0 +1,529 @@
+{
+  "aegis": {
+    "gate": "aegis",
+    "org": "AEGIS-TRACE",
+    "clock": "Gate clock",
+    "registrar": "Register clerk",
+    "actors": {
+      "Rowan Ellis": {
+        "role": "release manager",
+        "revision": 1,
+        "active": true
+      },
+      "Ellis Chen": {
+        "role": "release reviewer",
+        "revision": 1,
+        "active": true
+      },
+      "Ava Bell": {
+        "role": "review lead",
+        "revision": 1,
+        "active": true
+      },
+      "Iona Vale": {
+        "role": "steward",
+        "revision": 1,
+        "active": true
+      },
+      "Register clerk": {
+        "role": "registrar",
+        "revision": 1,
+        "active": true
+      },
+      "Gate clock": {
+        "role": "clock",
+        "revision": 1,
+        "active": true
+      },
+      "Pat Guest": {
+        "role": "observer",
+        "revision": 1,
+        "active": true
+      },
+      "Mira Lin": {
+        "role": "release reviewer",
+        "revision": 1,
+        "active": true
+      }
+    },
+    "actions": {
+      "release-DS-7": {
+        "target": "Publish DS-7 to public catalogue",
+        "owner": "Rowan Ellis",
+        "reviewer": "Ellis Chen",
+        "lead": "Ava Bell",
+        "reviewer_pool": [
+          "Ellis Chen",
+          "Mira Lin"
+        ],
+        "cost_items": [
+          "review",
+          "incremental staging"
+        ],
+        "roles": [
+          "steward"
+        ],
+        "grounds": [
+          "DATASET_SCOPE_MISMATCH"
+        ],
+        "period": 5,
+        "intake": "aegis-private-intake",
+        "routes": {
+          "r-48d1": "Ellis Chen",
+          "r-052c": "Ellis Chen",
+          "r-01b9": "Ellis Chen"
+        },
+        "finding_routes": {
+          "f-3a9d": {
+            "reviewer": "Ellis Chen",
+            "challenger": "Iona Vale",
+            "challenge": "C-A",
+            "basis": {
+              "claim": {
+                "type": "steward clearance",
+                "issuer": "Clearance desk",
+                "id": "SC-7",
+                "version": "v2",
+                "digest": "6cc2bcf6accf67af174146a4b8df1f446daf916b57a144b034a187f605fe18c9"
+              },
+              "evidence": "clearance-file/2"
+            }
+          },
+          "f-92f7": {
+            "reviewer": "Ellis Chen",
+            "challenger": "Iona Vale",
+            "challenge": "C-A",
+            "basis": {
+              "claim": {
+                "type": "steward clearance",
+                "issuer": "Clearance desk",
+                "id": "SC-7",
+                "version": "v1",
+                "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e"
+              },
+              "evidence": "clearance-file/1"
+            }
+          },
+          "f-92f8": {
+            "reviewer": "Ellis Chen",
+            "challenger": "Iona Vale",
+            "challenge": "C-A",
+            "basis": {
+              "claim": {
+                "type": "steward clearance",
+                "issuer": "Clearance desk",
+                "id": "SC-7",
+                "version": "v1",
+                "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e"
+              },
+              "evidence": "clearance-file/1"
+            }
+          },
+          "f-78cf": {
+            "reviewer": "Mira Lin",
+            "challenger": "Iona Vale",
+            "challenge": "C-A",
+            "basis": {
+              "claim": {
+                "type": "steward clearance",
+                "issuer": "Clearance desk",
+                "id": "SC-7",
+                "version": "v1",
+                "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e"
+              },
+              "evidence": "clearance-file/1"
+            }
+          },
+          "f-a010": {
+            "reviewer": "Ellis Chen",
+            "challenger": "Iona Vale",
+            "challenge": "C-A2",
+            "basis": {
+              "claim": {
+                "type": "steward clearance",
+                "issuer": "Clearance desk",
+                "id": "SC-7",
+                "version": "v2",
+                "digest": "6cc2bcf6accf67af174146a4b8df1f446daf916b57a144b034a187f605fe18c9"
+              },
+              "evidence": "clearance-file/2"
+            }
+          }
+        },
+        "basis_catalog": [
+          {
+            "claim": {
+              "type": "steward clearance",
+              "issuer": "Clearance desk",
+              "id": "SC-7",
+              "version": "v1",
+              "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e"
+            },
+            "evidence": "clearance-file/1"
+          },
+          {
+            "claim": {
+              "type": "steward clearance",
+              "issuer": "Clearance desk",
+              "id": "SC-7",
+              "version": "v2",
+              "digest": "6cc2bcf6accf67af174146a4b8df1f446daf916b57a144b034a187f605fe18c9"
+            },
+            "evidence": "clearance-file/2"
+          },
+          {
+            "claim": {
+              "type": "steward clearance",
+              "issuer": "Clearance desk",
+              "id": "SC-7",
+              "version": "v2",
+              "digest": "6cc2bcf6accf67af174146a4b8df1f446daf916b57a144b034a187f605fe18c9"
+            },
+            "evidence": "clearance-file/3"
+          }
+        ],
+        "current": {
+          "claim": {
+            "type": "steward clearance",
+            "issuer": "Clearance desk",
+            "id": "SC-7",
+            "version": "v1",
+            "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e"
+          },
+          "evidence": "clearance-file/1"
+        },
+        "effect": "CATALOGUE_VISIBILITY",
+        "approval": {
+          "id": "release-DS-7/approval-1",
+          "target": "Publish DS-7 to public catalogue",
+          "claim": {
+            "type": "steward clearance",
+            "issuer": "Clearance desk",
+            "id": "SC-7",
+            "version": "v1",
+            "digest": "ec1d88151e6be2b2d7decb03b9145dd2698226acc9730d3c4291155eeaf4dd6e"
+          },
+          "evidence": "clearance-file/1",
+          "owner_mandate": 1,
+          "reviewer_mandates": {
+            "Ellis Chen": 1
+          }
+        }
+      }
+    }
+  },
+  "north": {
+    "gate": "north",
+    "org": "North buyer",
+    "clock": "Gate clock",
+    "registrar": "Register clerk",
+    "actors": {
+      "Nia Ford": {
+        "role": "buyer lead",
+        "revision": 1,
+        "active": true
+      },
+      "Alex Reed": {
+        "role": "quality reviewer",
+        "revision": 1,
+        "active": true
+      },
+      "Jo Shah": {
+        "role": "review lead",
+        "revision": 1,
+        "active": true
+      },
+      "Sam Ortiz": {
+        "role": "inspector",
+        "revision": 1,
+        "active": true
+      },
+      "Register clerk": {
+        "role": "registrar",
+        "revision": 1,
+        "active": true
+      },
+      "Gate clock": {
+        "role": "clock",
+        "revision": 1,
+        "active": true
+      },
+      "Pat Guest": {
+        "role": "observer",
+        "revision": 1,
+        "active": true
+      }
+    },
+    "actions": {
+      "accept-B42": {
+        "target": "Post acceptance of batch B42",
+        "owner": "Nia Ford",
+        "reviewer": "Alex Reed",
+        "lead": "Jo Shah",
+        "reviewer_pool": [
+          "Alex Reed"
+        ],
+        "cost_items": [
+          "review",
+          "incremental storage"
+        ],
+        "roles": [
+          "inspector"
+        ],
+        "grounds": [
+          "BATCH_MISMATCH"
+        ],
+        "period": 5,
+        "intake": "north-private-intake",
+        "routes": {
+          "r-a2b8": "Alex Reed"
+        },
+        "finding_routes": {
+          "f-36b0": {
+            "reviewer": "Alex Reed",
+            "challenger": "Sam Ortiz",
+            "challenge": "C-B",
+            "basis": {
+              "claim": {
+                "type": "lab report",
+                "issuer": "Synthetic assay lab",
+                "id": "LR-17",
+                "version": "v1",
+                "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+              },
+              "evidence": "intake-file/1"
+            }
+          }
+        },
+        "basis_catalog": [
+          {
+            "claim": {
+              "type": "lab report",
+              "issuer": "Synthetic assay lab",
+              "id": "LR-17",
+              "version": "v1",
+              "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+            },
+            "evidence": "intake-file/1"
+          }
+        ],
+        "current": {
+          "claim": {
+            "type": "lab report",
+            "issuer": "Synthetic assay lab",
+            "id": "LR-17",
+            "version": "v1",
+            "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+          },
+          "evidence": "intake-file/1"
+        },
+        "effect": "BATCH_ACCEPTANCE",
+        "approval": {
+          "id": "accept-B42/approval-1",
+          "target": "Post acceptance of batch B42",
+          "claim": {
+            "type": "lab report",
+            "issuer": "Synthetic assay lab",
+            "id": "LR-17",
+            "version": "v1",
+            "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+          },
+          "evidence": "intake-file/1",
+          "owner_mandate": 1,
+          "reviewer_mandates": {
+            "Alex Reed": 1
+          }
+        }
+      },
+      "order-O99": {
+        "target": "Post acceptance of order O99",
+        "owner": "Nia Ford",
+        "reviewer": "Alex Reed",
+        "lead": "Jo Shah",
+        "reviewer_pool": [
+          "Alex Reed"
+        ],
+        "cost_items": [
+          "review",
+          "incremental storage"
+        ],
+        "roles": [
+          "inspector"
+        ],
+        "grounds": [
+          "ORDER_MISMATCH"
+        ],
+        "period": 5,
+        "intake": "north-private-intake",
+        "routes": {
+          "r-49d0": "Alex Reed"
+        },
+        "finding_routes": {},
+        "basis_catalog": [
+          {
+            "claim": {
+              "type": "order confirmation",
+              "issuer": "Supply desk",
+              "id": "OC-99",
+              "version": "v1",
+              "digest": "0aeea83cb2858309564e5cbde19b7f4a5f5c648b737006df57b80bf70dab05cb"
+            },
+            "evidence": "order-file/1"
+          }
+        ],
+        "current": {
+          "claim": {
+            "type": "order confirmation",
+            "issuer": "Supply desk",
+            "id": "OC-99",
+            "version": "v1",
+            "digest": "0aeea83cb2858309564e5cbde19b7f4a5f5c648b737006df57b80bf70dab05cb"
+          },
+          "evidence": "order-file/1"
+        },
+        "effect": "ORDER_ACCEPTANCE",
+        "approval": {
+          "id": "order-O99/approval-1",
+          "target": "Post acceptance of order O99",
+          "claim": {
+            "type": "order confirmation",
+            "issuer": "Supply desk",
+            "id": "OC-99",
+            "version": "v1",
+            "digest": "0aeea83cb2858309564e5cbde19b7f4a5f5c648b737006df57b80bf70dab05cb"
+          },
+          "evidence": "order-file/1",
+          "owner_mandate": 1,
+          "reviewer_mandates": {
+            "Alex Reed": 1
+          }
+        }
+      }
+    }
+  },
+  "south": {
+    "gate": "south",
+    "org": "South buyer",
+    "clock": "Gate clock",
+    "registrar": "Register clerk",
+    "actors": {
+      "Dev Malik": {
+        "role": "buyer lead",
+        "revision": 1,
+        "active": true
+      },
+      "Bea Singh": {
+        "role": "quality reviewer",
+        "revision": 1,
+        "active": true
+      },
+      "Theo Price": {
+        "role": "review lead",
+        "revision": 1,
+        "active": true
+      },
+      "Sam Ortiz": {
+        "role": "inspector",
+        "revision": 1,
+        "active": true
+      },
+      "Register clerk": {
+        "role": "registrar",
+        "revision": 1,
+        "active": true
+      },
+      "Gate clock": {
+        "role": "clock",
+        "revision": 1,
+        "active": true
+      },
+      "Pat Guest": {
+        "role": "observer",
+        "revision": 1,
+        "active": true
+      }
+    },
+    "actions": {
+      "accept-B42": {
+        "target": "Post acceptance of batch B42",
+        "owner": "Dev Malik",
+        "reviewer": "Bea Singh",
+        "lead": "Theo Price",
+        "reviewer_pool": [
+          "Bea Singh"
+        ],
+        "cost_items": [
+          "review",
+          "incremental storage"
+        ],
+        "roles": [
+          "inspector"
+        ],
+        "grounds": [
+          "BATCH_MISMATCH"
+        ],
+        "period": 5,
+        "intake": "south-private-intake",
+        "routes": {
+          "r-e541": "Bea Singh"
+        },
+        "finding_routes": {
+          "f-e997": {
+            "reviewer": "Bea Singh",
+            "challenger": "Sam Ortiz",
+            "challenge": "C-B",
+            "basis": {
+              "claim": {
+                "type": "lab report",
+                "issuer": "Synthetic assay lab",
+                "id": "LR-17",
+                "version": "v1",
+                "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+              },
+              "evidence": "intake-file/1"
+            }
+          }
+        },
+        "basis_catalog": [
+          {
+            "claim": {
+              "type": "lab report",
+              "issuer": "Synthetic assay lab",
+              "id": "LR-17",
+              "version": "v1",
+              "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+            },
+            "evidence": "intake-file/1"
+          }
+        ],
+        "current": {
+          "claim": {
+            "type": "lab report",
+            "issuer": "Synthetic assay lab",
+            "id": "LR-17",
+            "version": "v1",
+            "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+          },
+          "evidence": "intake-file/1"
+        },
+        "effect": "BATCH_ACCEPTANCE",
+        "approval": {
+          "id": "accept-B42/approval-1",
+          "target": "Post acceptance of batch B42",
+          "claim": {
+            "type": "lab report",
+            "issuer": "Synthetic assay lab",
+            "id": "LR-17",
+            "version": "v1",
+            "digest": "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261"
+          },
+          "evidence": "intake-file/1",
+          "owner_mandate": 1,
+          "reviewer_mandates": {
+            "Bea Singh": 1
+          }
+        }
+      }
+    }
+  }
+}

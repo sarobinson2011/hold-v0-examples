@@ -1,0 +1,24 @@
+{
+  "block-first": {
+    "gate_sequence": ["APPROVED","POST_INTENT","PENDING","ADMITTED"],
+    "gate_ticks": [0,8,10,13],
+    "catalogue_sequence": ["BLOCKED","BLOCKED","BLOCKED","CONFLICT"],
+    "catalogue_operations": ["block","post","post","post"],
+    "restart_gate_sequence": ["APPROVED","POST_INTENT","PENDING"],
+    "restart_catalogue_sequence": ["BLOCKED"],
+    "visible": 0, "open": 1, "gate_status": "HELD",
+    "original_decisions": 1, "dispatches": 1, "pending_seq": 3,
+    "final_seq": 4, "reviewer": "Ellis Chen", "due": 18
+  },
+  "post-first": {
+    "gate_sequence": ["APPROVED","POST_INTENT","PENDING","LOOKUP_INCONCLUSIVE","LOOKUP_INCONCLUSIVE","LATE"],
+    "gate_ticks": [0,8,10,11,12,13],
+    "catalogue_sequence": ["POSTED","CONFLICT","POSTED"],
+    "catalogue_operations": ["post","post","post"],
+    "restart_gate_sequence": ["APPROVED","POST_INTENT","PENDING"],
+    "restart_catalogue_sequence": ["POSTED"],
+    "visible": 1, "open": 0, "gate_status": "COMMITTED",
+    "original_decisions": 1, "dispatches": 1, "pending_seq": 3,
+    "final_seq": 6, "reviewer": "Ellis Chen", "due": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "claims": {
+    "f8d4de7cfa15d4aed54adddfb0329fc7baa7327be6794eaa1f15f5c8fe266261": "Synthetic lab report LR-17 v1 certifies batch B41.",
+    "0aeea83cb2858309564e5cbde19b7f4a5f5c648b737006df57b80bf70dab05cb": "Synthetic order confirmation OC-99 v1 covers order O99."
+  },
+  "intake": {
+    "r-a2b8": "Packing note B42 differs from lab specimen B41.",
+    "r-49d0": "Synthetic O99 packing slip."
+  },
+  "findings": {
+    "f-36b0": "B41 was tested. The B42 objection is substantiated."
+  }
+}

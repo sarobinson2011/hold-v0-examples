@@ -1,0 +1,53 @@
+{
+  "revoke-first": {
+    "schedule": [
+      "dispatch",
+      "gate_revoke",
+      "notice_lost"
+    ],
+    "mandate_seq": 1,
+    "decision_seq": 2,
+    "outcome": "REFUSED",
+    "visible": 0,
+    "cut": [
+      2,
+      false,
+      0,
+      0
+    ]
+  },
+  "post-first": {
+    "schedule": [
+      "dispatch",
+      "post_lost",
+      "gate_revoke"
+    ],
+    "mandate_seq": 2,
+    "decision_seq": 1,
+    "outcome": "POSTED",
+    "visible": 1,
+    "cut": [
+      1,
+      true,
+      1,
+      1
+    ]
+  },
+  "gate-first-notice-delayed": {
+    "schedule": [
+      "dispatch",
+      "gate_revoke",
+      "post_lost"
+    ],
+    "mandate_seq": 2,
+    "decision_seq": 1,
+    "outcome": "POSTED",
+    "visible": 1,
+    "cut": [
+      1,
+      true,
+      1,
+      1
+    ]
+  }
+}
